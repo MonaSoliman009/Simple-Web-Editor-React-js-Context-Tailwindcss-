@@ -1,0 +1,25 @@
+.inp{
+  
+  @apply block py-2.5 px-1 w-80 m-auto text-lg bg-gray-400 text-white	  border-0 focus:outline-none	  ;
+     
+}
+
+textarea{
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+textarea::-webkit-scrollbar-track{
+	background-color: white;
+}
+
+textarea::-webkit-scrollbar{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+textarea::-webkit-scrollbar-thumb{
+	border-radius: 100px;
+	box-shadow: 3px 0px 12px 4px grey;
+	background-color: rgba(0,0,0,0.5);
+}
