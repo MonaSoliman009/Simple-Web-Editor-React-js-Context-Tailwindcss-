@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './App.css'
 import Editor from './views/editor';
 import View from './views/view';
+import { ContentProvider } from './context/content';
 
 function App() {
   const [content, setContent] = useState({
@@ -19,13 +20,12 @@ function App() {
 
   return (
     <>
-      <div className="grid lg:grid-cols-3 sm:grid-cols-2">
-        <div className="bg-gray-600 	sm:grid-cols-1"><Editor content={content} changeContent={setContent} /></div>
-        <div className="lg:col-span-2 sm:grid-cols-1"> <View content={content} /></div>
-
-
+    <ContentProvider value={{content,setContent}}>
+      <div className="grid lg:grid-cols-3 sm:grid-cols-2 h-screen ">
+        <div className="bg-gray-600 	sm:grid-cols-1"><Editor  /></div>
+        <div className={`flex content-center flex-wrap  bg-[url('${content.bgImage}')]  bg-[length:100%_100%]   bg-no-repeat lg:col-span-2 sm:grid-cols-1`}> <View/></div>
       </div>
-
+      </ContentProvider>
     </>
   )
 }

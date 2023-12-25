@@ -1,2 +1,3 @@
-import { React } from 'react';
-=React.createContext()
+import  React  from 'react';
+export let contentContext=React.createContext()
+export let ContentProvider=contentContext.Provider

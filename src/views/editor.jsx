@@ -1,23 +1,25 @@
+import { useContext } from "react";
 import Input from "../components/input/input";
-import PropTypes from 'prop-types';
 import TxtArea from "../components/input/txtArea";
+import { contentContext } from "../context/content";
 
-const Editor = ({ content: { title, description, btnText, btnUrl, bgImage }, changeContent }) => {
+const Editor = () => {
 
+    let{content:{bgImage,title,description,btnUrl,btnText}}=useContext(contentContext);
 
     return (
         <div className="my-12">
 
-            <Input type="text" val={title} changeContent={changeContent} />
+            <Input type="text" val={title} inpType="title" />
 
-            <TxtArea val={description} changeContent={changeContent} />
-            <Input type="text" val={bgImage} changeContent={changeContent} />
+            <TxtArea val={description} inpType= "description" />
+            <Input type="text" val={bgImage} inpType= "bgImage" />
 
-            <Input type="text" val={btnText} changeContent={changeContent} />
+            <Input type="text" val={btnText} inpType= "btnText" />
 
 
 
-            <Input type="text" val={btnUrl} changeContent={changeContent} />
+            <Input type="text" val={btnUrl} inpType= "btnUrl" />
 
 
 
@@ -27,7 +29,3 @@ const Editor = ({ content: { title, description, btnText, btnUrl, bgImage }, cha
 }
 
 export default Editor;
-Editor.propTypes = {
-    content: PropTypes.object,
-
-}
